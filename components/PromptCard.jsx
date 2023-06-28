@@ -3,7 +3,7 @@
 import { useState } from 'react';
 import Image from 'next/image';
 import { useSession } from 'next-auth/react';
-import { usePathname, useRouter } from 'next/navigation'
+import { usePathname } from 'next/navigation'
 
 const PromptCard = ({ key, post, handleTagClick, handleEdit, handleDelete }) => {
 
@@ -11,7 +11,6 @@ const PromptCard = ({ key, post, handleTagClick, handleEdit, handleDelete }) => 
 
   const pathName = usePathname();
   const { data: session } = useSession();
-  const router = useRouter();
 
   const handleCopy = () => {
     setCopied(post[0].prompt);
